@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="Notificaties Mijn Zaken" id="id-7c73a44ae3fc47e8a86cd7f3cf166a75" version="5.0.0">
+  <folder name="Strategy" id="id-5daddd10b7f944bbaa7ad44a50ce6f77" type="strategy"/>
+  <folder name="Business" id="id-e3c941812ffc4d44b27192f8e0e983c1" type="business">
+    <element xsi:type="archimate:BusinessActor" name="Nijmegenaar" id="id-050407b2f6fd4842af9d7bc643e35247"/>
+  </folder>
+  <folder name="Application" id="id-ab09be24c20c45deb398657fd00dcc1f" type="application">
+    <element xsi:type="archimate:ApplicationService" name="Notificaties" id="id-51f19924757b4626a320c80738b89aba"/>
+    <element xsi:type="archimate:ApplicationService" name="E-mailverzender" id="id-96e346806a114dddb9682d0ca64bc4a5"/>
+    <element xsi:type="archimate:ApplicationService" name="Zaken" id="id-e6bfc715a6e44f08bd3772f414594227"/>
+    <element xsi:type="archimate:ApplicationComponent" name="VIP" id="id-594eb798865a4bc0863551bb36f57847">
+      <documentation>VIP 'vult' zaken in Open zaak (is taakapplicatie, met onderliggend Open zaak)</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Open notificaties" id="id-da64125472d04e74a2ed4ab5655a8c10"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Nieuwe component" id="id-7e4048ea836940cb8c9fd883d45dc5d2"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Mijn Nijmegen" id="id-1b58914ad9e9408a9481b801f5c176ca"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Form.IO-formulieren" id="id-9bdc395361a7459fb4032796846daaa3"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Open zaak" id="id-71c3254f99bd4036950115e450a1be2a"/>
+    <element xsi:type="archimate:ApplicationComponent" name="VIP (taakapplicatie/zaaksysteem)" id="id-f980b990178d41c1817f371544b76884"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Open klant" id="id-14369a82eb1b4bcbb3b2088d3195eee9"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Klantnotificaties" id="id-1cfb24fe67194fa09eb5361114d6fab2"/>
+    <element xsi:type="archimate:ApplicationInterface" name="Notificatie API" id="id-40ecfda1cb2541cebdbd4a3cab9973d0"/>
+  </folder>
+  <folder name="Technology &amp; Physical" id="id-6bb61210a0b04ca6b943f96178e564de" type="technology"/>
+  <folder name="Motivation" id="id-5575e9a5c4a245a7a17eca230171bcd6" type="motivation"/>
+  <folder name="Implementation &amp; Migration" id="id-f97a9a00abae490484c654f3c1bb774a" type="implementation_migration"/>
+  <folder name="Other" id="id-cb6081514681477cb430a8ee5984bab2" type="other"/>
+  <folder name="Relations" id="id-17156e0437a149b2b0a12f628004dc87" type="relations">
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f2f8da75ca914daeb7743d0fdaa0b6a8" source="id-e6bfc715a6e44f08bd3772f414594227" target="id-51f19924757b4626a320c80738b89aba">
+      <documentation>Wijzigingen in zaken triggeren een notificatie
+</documentation>
+    </element>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-25c92ca8f67a4336a555e51d3fa9fbab" source="id-51f19924757b4626a320c80738b89aba" target="id-96e346806a114dddb9682d0ca64bc4a5">
+      <documentation>Verzendservice ontvangt notificatie, is verantwoordelijk voor verzending</documentation>
+    </element>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f4ec8c602b064220b61516f962853c51" source="id-594eb798865a4bc0863551bb36f57847" target="id-e6bfc715a6e44f08bd3772f414594227"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-4aefef5521f24a718df882a381e4d3c7" source="id-da64125472d04e74a2ed4ab5655a8c10" target="id-51f19924757b4626a320c80738b89aba"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-cc2f5fdd3c844e48ab086f2c81271f5c" source="id-7e4048ea836940cb8c9fd883d45dc5d2" target="id-96e346806a114dddb9682d0ca64bc4a5"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f943d72d120b4745bfdf87cb4121dc29" source="id-9bdc395361a7459fb4032796846daaa3" target="id-f980b990178d41c1817f371544b76884"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-708d0b381c064569881fec2e4f971b5c" source="id-f980b990178d41c1817f371544b76884" target="id-71c3254f99bd4036950115e450a1be2a"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-9873731424514d30bd051c8989f59c87" source="id-71c3254f99bd4036950115e450a1be2a" target="id-1b58914ad9e9408a9481b801f5c176ca"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f534b7b847b4417eb082873adeab93db" source="id-71c3254f99bd4036950115e450a1be2a" target="id-40ecfda1cb2541cebdbd4a3cab9973d0">
+      <documentation>Notificeren van statusupdates en besluiten
+</documentation>
+    </element>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-337cc09a694f4b61ae915ac8c02b2130" source="id-40ecfda1cb2541cebdbd4a3cab9973d0" target="id-1cfb24fe67194fa09eb5361114d6fab2"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-43900b35658849e6b24e98b8c62faac0" source="id-14369a82eb1b4bcbb3b2088d3195eee9" target="id-1cfb24fe67194fa09eb5361114d6fab2"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-96e8c220816443b09677e5e954354675" source="id-71c3254f99bd4036950115e450a1be2a" target="id-1cfb24fe67194fa09eb5361114d6fab2"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-b15860e474a6446bb3a5e5544c4b0bff" source="id-1b58914ad9e9408a9481b801f5c176ca" target="id-050407b2f6fd4842af9d7bc643e35247"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-61861d8717bc499792046fb0343b7a36" source="id-1cfb24fe67194fa09eb5361114d6fab2" target="id-050407b2f6fd4842af9d7bc643e35247"/>
+  </folder>
+  <folder name="Views" id="id-cc6b67111d1f4c7794a80c45460c3066" type="diagrams">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="PSA Mijn zaken / samenwerkende portalen" id="id-1b6b9603c3cf43c59dae5ad9e1fb48ad">
+      <child xsi:type="archimate:Group" id="id-32c5a4b412e942408226ac5956f98a1c" name="Woweb (SAAS)" textAlignment="1">
+        <bounds x="204" y="240" width="433" height="229"/>
+        <child xsi:type="archimate:DiagramObject" id="id-2eb08d30802b438d9dfa52f0a419478d" targetConnections="id-18cad47c286d41b58013ba3209756e49" archimateElement="id-71c3254f99bd4036950115e450a1be2a">
+          <bounds x="24" y="36" width="181" height="73"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-728264c734ad451285909d3245b24ddb" source="id-2eb08d30802b438d9dfa52f0a419478d" target="id-d3a8a2ddc2c14fbfb1d1d4f1ff091c1b" archimateRelationship="id-9873731424514d30bd051c8989f59c87"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-82233c4a7a1d4d1a85024de1799b327e" targetConnections="id-fdbe038576fc43f2ad9175041c8e9488" archimateElement="id-f980b990178d41c1817f371544b76884">
+          <bounds x="24" y="144" width="181" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-18cad47c286d41b58013ba3209756e49" source="id-82233c4a7a1d4d1a85024de1799b327e" target="id-2eb08d30802b438d9dfa52f0a419478d" archimateRelationship="id-708d0b381c064569881fec2e4f971b5c"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-bb819d1fd5e240a08500be6095f11f13" archimateElement="id-14369a82eb1b4bcbb3b2088d3195eee9">
+          <bounds x="228" y="144" width="181" height="55"/>
+        </child>
+      </child>
+      <child xsi:type="archimate:Group" id="id-41f2b356f4634fd491fa03f580de4c44" name="Nijmegen (intern / AWS)" textAlignment="1">
+        <bounds x="204" y="60" width="433" height="133"/>
+        <child xsi:type="archimate:DiagramObject" id="id-c3c717bb9c114a7296a286ec1a56dce4" archimateElement="id-9bdc395361a7459fb4032796846daaa3">
+          <bounds x="216" y="48" width="193" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-fdbe038576fc43f2ad9175041c8e9488" source="id-c3c717bb9c114a7296a286ec1a56dce4" target="id-82233c4a7a1d4d1a85024de1799b327e" archimateRelationship="id-f943d72d120b4745bfdf87cb4121dc29"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-d3a8a2ddc2c14fbfb1d1d4f1ff091c1b" targetConnections="id-728264c734ad451285909d3245b24ddb" archimateElement="id-1b58914ad9e9408a9481b801f5c176ca">
+          <bounds y="48" width="181" height="55"/>
+        </child>
+      </child>
+      <documentation>Huidige situatie</documentation>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="PSA Mijn zaken / samenwerkende portalen gewenst" id="id-d69458cae23d485a948d20c922eaf366">
+      <child xsi:type="archimate:DiagramObject" id="id-594d9ba4426c4ecbae1d7416c2a458b4" targetConnections="id-7265211a54194a698fdea23f1119df1b" archimateElement="id-40ecfda1cb2541cebdbd4a3cab9973d0">
+        <bounds x="576" y="396" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-0a8b1a6d835c40049d2833db444efcd5" lineColor="#4da38d" source="id-594d9ba4426c4ecbae1d7416c2a458b4" target="id-d0df5413f0c6490aa7b66642ee9f925d" archimateRelationship="id-337cc09a694f4b61ae915ac8c02b2130"/>
+      </child>
+      <child xsi:type="archimate:Group" id="id-1a8395fb74b54d5eafe11214f0929747" name="Worth (SAAS)" textAlignment="1">
+        <bounds x="732" y="384" width="241" height="121"/>
+        <child xsi:type="archimate:DiagramObject" id="id-d0df5413f0c6490aa7b66642ee9f925d" targetConnections="id-0a8b1a6d835c40049d2833db444efcd5 id-6d4d5870fb2142ffb5cefb12016747fb id-209fe906fab747a98c5bbe21bc4895c2" archimateElement="id-1cfb24fe67194fa09eb5361114d6fab2">
+          <bounds x="24" y="48" width="181" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-ad9d84d62b2645e48ef36e8baf72e236" lineColor="#50aa93" source="id-d0df5413f0c6490aa7b66642ee9f925d" target="id-89a0eaaa0b874b0a8b17efb2d10e855a" archimateRelationship="id-61861d8717bc499792046fb0343b7a36">
+            <feature name="labelExpression" value="e-mail of sms"/>
+            <bendpoint startX="-66" startY="-351" endX="564" endY="-3"/>
+          </sourceConnection>
+        </child>
+      </child>
+      <child xsi:type="archimate:Group" id="id-1b9a4c2093334b1abf70f3321249bbdc" name="Woweb (SAAS)" textAlignment="1">
+        <bounds x="96" y="396" width="433" height="229"/>
+        <child xsi:type="archimate:DiagramObject" id="id-d7fcd556324746e788ff2769b6622e86" targetConnections="id-6ce9979923e8442d9d7d2a093c357261" archimateElement="id-71c3254f99bd4036950115e450a1be2a">
+          <bounds x="24" y="36" width="181" height="73"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-870d6c379db746a8bda3e16d4bf439be" source="id-d7fcd556324746e788ff2769b6622e86" target="id-962922a8db2049b19fbb136c8dfdbf0f" archimateRelationship="id-9873731424514d30bd051c8989f59c87"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-7265211a54194a698fdea23f1119df1b" lineColor="#4da38d" source="id-d7fcd556324746e788ff2769b6622e86" target="id-594d9ba4426c4ecbae1d7416c2a458b4" archimateRelationship="id-f534b7b847b4417eb082873adeab93db">
+            <feature name="labelExpression" value="status en besluiten"/>
+          </sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-209fe906fab747a98c5bbe21bc4895c2" lineColor="#4da38d" source="id-d7fcd556324746e788ff2769b6622e86" target="id-d0df5413f0c6490aa7b66642ee9f925d" archimateRelationship="id-96e8c220816443b09677e5e954354675">
+            <feature name="labelExpression" value="zaakinformatie voor notificatie"/>
+          </sourceConnection>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-36f5fb12c6254079b64ebc79938a3bbd" targetConnections="id-630c2b475f754c61a4c70482e3ec248c" archimateElement="id-f980b990178d41c1817f371544b76884">
+          <bounds x="24" y="144" width="181" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-6ce9979923e8442d9d7d2a093c357261" source="id-36f5fb12c6254079b64ebc79938a3bbd" target="id-d7fcd556324746e788ff2769b6622e86" archimateRelationship="id-708d0b381c064569881fec2e4f971b5c"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-8cddd296fbdc40af803acff2d7aae2d2" archimateElement="id-14369a82eb1b4bcbb3b2088d3195eee9">
+          <bounds x="228" y="144" width="181" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-6d4d5870fb2142ffb5cefb12016747fb" lineColor="#4da38d" source="id-8cddd296fbdc40af803acff2d7aae2d2" target="id-d0df5413f0c6490aa7b66642ee9f925d" archimateRelationship="id-43900b35658849e6b24e98b8c62faac0">
+            <feature name="labelExpression" value="klantvoorkeur notificaties"/>
+            <bendpoint startX="78" startY="-87" endX="-354" endY="21"/>
+          </sourceConnection>
+        </child>
+      </child>
+      <child xsi:type="archimate:Group" id="id-38f83c66ed7745ed8e3e25ff2ed3abeb" name="Nijmegen (intern / AWS)" textAlignment="1">
+        <bounds x="96" y="216" width="433" height="133"/>
+        <child xsi:type="archimate:DiagramObject" id="id-f09ff3c46f2642f79c5a5d5151dbd3a6" archimateElement="id-9bdc395361a7459fb4032796846daaa3">
+          <bounds x="216" y="48" width="193" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-630c2b475f754c61a4c70482e3ec248c" textPosition="0" source="id-f09ff3c46f2642f79c5a5d5151dbd3a6" target="id-36f5fb12c6254079b64ebc79938a3bbd" archimateRelationship="id-f943d72d120b4745bfdf87cb4121dc29">
+            <feature name="labelExpression" value="Start zaak"/>
+            <bendpoint startX="-72" startY="225" endX="126" endY="-51"/>
+            <bendpoint startX="-132" startY="225" endX="66" endY="-51"/>
+          </sourceConnection>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-962922a8db2049b19fbb136c8dfdbf0f" targetConnections="id-870d6c379db746a8bda3e16d4bf439be" archimateElement="id-1b58914ad9e9408a9481b801f5c176ca">
+          <bounds x="24" y="48" width="181" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f32fe69c9cd74edd9220ab5d1b0e64a3" source="id-962922a8db2049b19fbb136c8dfdbf0f" target="id-89a0eaaa0b874b0a8b17efb2d10e855a" archimateRelationship="id-b15860e474a6446bb3a5e5544c4b0bff">
+            <feature name="labelExpression" value="inzien Mijn Nijmegen"/>
+            <bendpoint startX="-138" startY="-3" endX="-144" endY="177"/>
+            <bendpoint startX="-138" startY="-183" endX="-144" endY="-3"/>
+          </sourceConnection>
+        </child>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-89a0eaaa0b874b0a8b17efb2d10e855a" targetConnections="id-f32fe69c9cd74edd9220ab5d1b0e64a3 id-ad9d84d62b2645e48ef36e8baf72e236" archimateElement="id-050407b2f6fd4842af9d7bc643e35247">
+        <bounds x="156" y="84" width="120" height="55"/>
+      </child>
+      <documentation>Gewenste situatie</documentation>
+    </element>
+  </folder>
+</archimate:model>
